@@ -7,10 +7,6 @@ class system_users::admins {
   if $facts['kernel'] == 'windows' {
     user { 'admin':
       groups   => 'staff',
-<<<<<<< HEAD
-=======
-
->>>>>>> production
     }
   } else {
     package { 'csh':

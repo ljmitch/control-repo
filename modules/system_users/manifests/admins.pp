@@ -6,7 +6,7 @@ class system_users::admins {
 
   if $facts['kernel'] == 'windows' {
     user { 'admin':
-      group   => 'staff',
+      groups   => 'staff',
 
     }
   } else {
@@ -14,7 +14,7 @@ class system_users::admins {
       ensure  => latest,
     }
     user { 'admin':
-      group   => 'staff',
+      groups   => 'staff',
       shell   => '/bin/csh',
       require => Package['csh'],
       }

@@ -1,4 +1,4 @@
-class system_users::hostsfiles {
+class system_users::hostsfile {
 
   host { 'testing.puppetlabs.vm':
     ip => '127.0.0.1',

@@ -42,7 +42,12 @@ class nginxformasses (
   else {
     include chocolatey
 
-    package { 'nginx':
+    package { 'powershell':
       provider => 'chocolatey',
+      notify   => Reboot['Reboot-PowerShell'],
     }
-}
+
+    reboot { 'Reboot-Powershell':
+      apply => finished,
+    }
+  }
